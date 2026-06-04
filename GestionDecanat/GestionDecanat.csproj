@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6B5107F1-CA7C-4E78-95CE-CDD57CB63D5B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GestionDecanat</RootNamespace>
+    <AssemblyName>GestionDecanat</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="QuestPDF" Version="2024.10.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Database\GestionDecanat.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAL\BaseRepository.cs" />
+    <Compile Include="DAL\DbConnectionFactory.cs" />
+    <Compile Include="DAL\Repositories.cs" />
+    <Compile Include="Forms\AnneesAcademiquesForm.cs" />
+    <Compile Include="Forms\AttributionsCoursForm.cs" />
+    <Compile Include="Forms\BaseDataForm.cs" />
+    <Compile Include="Forms\CoursForm.cs" />
+    <Compile Include="Forms\DashboardForm.cs" />
+    <Compile Include="Forms\EnseignantsForm.cs" />
+    <Compile Include="Forms\EtudiantsForm.cs" />
+    <Compile Include="Forms\FacultesForm.cs" />
+    <Compile Include="Forms\InscriptionsForm.cs" />
+    <Compile Include="Forms\LoginForm.cs" />
+    <Compile Include="Forms\NotesForm.cs" />
+    <Compile Include="Forms\PromotionsForm.cs" />
+    <Compile Include="Forms\RapportsForm.cs" />
+    <Compile Include="Forms\StatistiquesForm.cs" />
+    <Compile Include="Forms\UtilisateursForm.cs" />
+    <Compile Include="Models\AnneeAcademique.cs" />
+    <Compile Include="Models\AttributionCours.cs" />
+    <Compile Include="Models\Cours.cs" />
+    <Compile Include="Models\Enseignant.cs" />
+    <Compile Include="Models\Etudiant.cs" />
+    <Compile Include="Models\Faculte.cs" />
+    <Compile Include="Models\Inscription.cs" />
+    <Compile Include="Models\Note.cs" />
+    <Compile Include="Models\Promotion.cs" />
+    <Compile Include="Models\Utilisateur.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Services\Services.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
